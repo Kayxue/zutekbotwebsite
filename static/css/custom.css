@@ -1,0 +1,15 @@
+.nav-link{
+    color: white !important;
+}
+.dropdown-item:hover{
+    background-color: white !important;
+    color: rgb(255, 193, 7) !important;
+}
+.dropdown-menu{
+    background-color:rgb(255, 193, 7) !important;
+    color: white !important;
+}
+.dropdown-item{
+    background-color:rgb(255, 193, 7) !important;
+    color: white !important;
+}
