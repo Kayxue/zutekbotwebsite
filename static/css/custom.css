@@ -13,3 +13,14 @@
     background-color:rgb(255, 193, 7) !important;
     color: white !important;
 }
+.modal-header{
+    background-color: rgb(255, 193, 7);
+    color: white;
+}
+.badge-warning{
+    color: white;
+}
+.card-header{
+    background-color: rgb(255, 193, 7);
+    color: white;
+}

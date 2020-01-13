@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="card mt-4">
+  <h2 class="font-weight-bold card-header">登入</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="card-body">
+      {% if form.errors %}
+      <p class="alert alert-danger mt-2 mb-4">帳號或密碼不符合，請再試一次。</p>
+      <!-我真想知道如何在此事件發生時呼叫指定JavaScript.......我上網找資料好像都找不到......->
+      {% else %}
+      <p class="alert alert-primary mt-2 mb-4">請輸入此官網平台之帳號與密碼（非Discord帳號與密碼）</p>
+      {% endif %}
+      <div class="mb-4">
+        <td>帳號：</td>
+        <td>{{ form.username }}</td>
+      </div>
+      <div class="mt-4">
+        <td>密碼：</td>
+        <td>{{ form.password }}</td>
+      </div>
+    </div>
+    <div class="card-footer">
+      <input type="submit"  value="登入" class="btn btn-sm btn-secondary" />
+    </div>
+  </form>
+</div>
+{% endblock %}

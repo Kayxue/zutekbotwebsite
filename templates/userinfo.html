@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="font-weight-bold mb-4 mt-4">{{title}} {% if user.is_superuser %}<span class="badge badge-warning badge-pill badge-sm"><i class="fas fa-user-cog"></i> 管理員：{{user.username}}</span> {% else %}<span class="badge badge-info badge-pill badge-sm"><i class="fas fa-user-alt"></i> 使用者：{{user.username}}</span>{% endif %}</h2>
+<table class="table table-striped table-hover container">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">項目</th>
+            <th scope="col">內容</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>使用者名稱</td>
+            <td>{{user.username}}</td>
+        </tr>
+        <tr>
+            <td>姓氏</td>
+            <td>{{user.last_name}}</td>
+        </tr>
+        <tr>
+            <td>名字</td>
+            <td>{{user.first_name}}</td>
+        </tr>
+        <tr>
+            <td>電子郵件</td>
+            <td>{{user.email}}</td>
+        </tr>
+        <tr>
+            <td>使用者群組</td>
+            <td>{{user.groups}}</td>    
+        </tr>
+        <tr>
+            <td>使用者權限</td>
+            <td>{{user.user_permissions}}</td>
+        </tr>
+        <tr>
+            <td>是否為工作人員</td>
+            {% if user.is_staff %}
+                <td>是</td>
+            {% else %}
+                <td>否</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <td>是否為超級使用者</td>
+            {% if user.is_superuser %}
+                <td>是</td>
+            {% else %}
+                <td>否</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <td>帳戶啟用狀態</td>
+            {% if user.is_active %}
+                <td>已啟用</td>
+            {% else %}
+                <td>未啟用</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <td>帳號申請日期</td>
+            <td>{{user.date_joined}}</td>
+        </tr>
+        <tr>
+            <td>最後登入日期</td>
+            <td>{{user.last_login}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<a type="button" class="nav-link btn btn-sm btn-danger logout mt-4 mb-4" data-toggle="modal" data-target="#exampleModal">
+    <i class="fas fa-sign-out-alt"></i> 登出
+</a>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">即將登出</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>確定登出？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">還沒</button>
+          <a href="/accounts/logout" type="button" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> 登出</a>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock content %}
