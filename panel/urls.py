@@ -3,5 +3,5 @@ from .views import Userinfo,Panel
 
 urlpatterns = [
     path('',Panel.as_view()),
-    path('userinfo/',Userinfo.as_view),
+    path('userinfo/',Userinfo.as_view()),
 ]
