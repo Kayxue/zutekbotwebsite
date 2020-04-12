@@ -1,24 +1,25 @@
 .dropdown-item:hover{
     background-color: white !important;
-    color: rgb(255, 193, 7) !important;
+    color: rgb(200, 244, 251) !important;
 }
 .dropdown-menu{
-    background-color:rgb(255, 193, 7) !important;
+    background-color:rgb(200, 244, 251) !important;
     color: white !important;
 }
 .dropdown-item{
-    background-color:rgb(255, 193, 7) !important;
+    background-color:rgb(200, 244, 251) !important;
     color: white !important;
 }
 .modal-header{
-    background-color: rgb(255, 193, 7);
+    background-color: rgb(200, 244, 251);
     color: white;
 }
 .badge-warning{
     color: white;
+    background-color: rgb(200, 244, 251);
 }
 .card-header{
-    background-color: rgb(255, 193, 7);
+    background-color: rgb(200, 244, 251);
     color: white;
 }
 .logout{
@@ -29,4 +30,11 @@
 }
 .btn-danger{
     color: white !important;
+}
+.btn-warning{
+    background-color: rgb(200, 244, 251);
+    color: white;
+}
+.bg-warning{
+    background-color: rgb(200, 244, 251) !important;
 }
