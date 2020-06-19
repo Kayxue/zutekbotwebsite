@@ -22,6 +22,7 @@ urlpatterns = [
     path('home/',include('home.urls')), 
     path('',RedirectView.as_view(url='home/')),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('panel/',include('panel.urls'))
+    path('panel/',include('panel.urls')),
+    path('command/',include('commands.urls'))
     
 ]
