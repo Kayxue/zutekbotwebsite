@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div>
+    <ul>
+        {% for commands in allcommands %}
+            <li>{{commands.command_name}}</li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock content %}
